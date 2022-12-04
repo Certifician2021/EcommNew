@@ -1,0 +1,13 @@
+.body{
+  margin: 0px;
+  padding: 0px;
+}
+
+header{
+  width: 100%;
+  height: 80px;
+}
+
+.logo{
+  color:#FF5C35;
+}

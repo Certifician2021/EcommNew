@@ -1,0 +1,65 @@
+version: "3"
+
+networks:
+  dev:
+
+
+services:
+  mongo_db:
+    container_name: db_container
+    image: mongo:4.4
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=
+      - MONGO_INITDB_ROOT_PASSWORD=
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo_db:/data/db
+    networks:
+      - dev
+
+
+  usermgmt_api:
+    build:
+      context: ./int-usermgmt-api
+      dockerfile: Dockerfile
+    container_name: usermgmt_container
+    environment:
+      - PORT=8080
+      - MONGO_URL=mongodb://mongo_db:27017
+      - MONGO_DATABASE_NAME=mis
+      - NODE_ENV=development
+      - APP_NAME=Admin-Module
+      - SECRET=thisismysecret
+      - REFRESH_TOKEN_SECRET="thisisrefreshtokensecret"
+      - EMAIL_SERVICE=http://email_api:8080
+      - FRONTEND_PORT=https://elektrise.technology
+      - ACCESS_TOKEN_EXPIRATION=3600
+      - REFRESH_TOKEN_EXPIRATION=604800
+      - EMAIL_TOKEN_LINK_EXPIRATION=86400
+    depends_on:
+      - mongo_db
+      - gateway
+    networks:
+      - dev
+
+
+  frontend:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: frontend_container
+    environment:
+      - REACT_APP_BASE_URL=https://elektrise.technology/api
+      - APP_DOMAIN=elektrise.technology
+      - PROXY=http://elektrise.technology:3001/
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - dev
+  
+
+volumes:
+  mongo_db: {}
