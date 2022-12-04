@@ -5,6 +5,7 @@ var cors = require("cors");
 var unless = require("express-unless");
 var { expressjwt: jwt } = require("express-jwt");
 require("dotenv").config({ path: __dirname + "/.env" });
+const path = require('path')
 
 const port = process.env.PORT || 5000;
 var mongoUtil = require("./db/mongo.js");

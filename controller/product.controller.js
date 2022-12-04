@@ -1,4 +1,4 @@
-var mongoUtil = require("../src/db/mongo");
+var mongoUtil = require("../db/mongo");
 const Razorpay = require("razorpay")
 
 exports.orderCompleted = async(req, res) => {

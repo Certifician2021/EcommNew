@@ -1,9 +1,9 @@
 const MongoClient = require("mongodb").MongoClient;
-require("dotenv").config({ path: __dirname + "../.env" });
+require("dotenv").config({ path: __dirname + "/../../.env" });
 var _db;
 var database = process.env.MONGO_DATABASE_NAME;
 var mongoUrl = process.env.MONGODB_URI;
-console.log(mongoUrl,database)
+
 module.exports = {
   connectToServer: function (callback) {
     MongoClient.connect(
