@@ -11,7 +11,7 @@ exports.login = async (req, res) => {
 
   if (!user) {
     console.log("user not available");
-    res.status(404).send({ success: false, message: "No user found." });
+    res.status(200).send({ success: false, message: "No user found." });
   } else {
     if (user) {
       console.log("Admin Login ...");
