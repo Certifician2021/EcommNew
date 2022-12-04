@@ -61,4 +61,4 @@ mongoUtil.connectToServer(function (err, db) {
 });
 
 const routes = require("./routes/routes");
-app.use("/api/", routes);
+app.use("/api", routes);
