@@ -5,8 +5,8 @@ const imgArray = [
        description:"Top & Affordable Products"
     },
     {
-    src:"https://burst.shopifycdn.com/photos/wrist-watches.jpg?width=1200&format=pjpg&exif=1&iptc=1",
-    alt:"Wrist Watches",
+    src:"https://e0.pxfuel.com/wallpapers/1024/971/desktop-wallpaper-ecommerce-aa-xia-interactive-internet-development-marketing-seo-shopping-cart.jpg",
+    alt:"Buy Now",
     description:"Top & Affordable Products"
 
     },
