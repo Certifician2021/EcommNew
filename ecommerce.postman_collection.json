@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "e0e6b5ad-dc47-4e79-bd2f-8531997269fa",
+		"name": "ecommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16955238"
+	},
+	"item": [
+		{
+			"name": "admin_login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user_registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Gaurav\",\r\n    \"lastName\": \"Pal\",\r\n    \"username\": \"gauravpal567@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"mobileNo\": \"8882906174\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user_login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"gauravpal541@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllUsers",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjI5OTA5NjYsInVzZXJJRCI6IjU2NzU4Nzc5NyIsImlhdCI6MTY2MjM4NjE2Nn0.CTmfzWsRtrjrtiYm5Lgt97oAxt4OC8Z2D9V9voqH9vA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add_product_permission",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjI5OTE1MDMsInVzZXJJRCI6IjU2NzU4Nzc5NyIsImlhdCI6MTY2MjM4NjcwM30.qT7X2us3jx06MMVCHV4_ApCEL_hNPInE4v-Jt5c6bm8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userID\":\"23863547\",\r\n    \"products\":[{  \"productName\": \"LED TV\",\r\n  \"productCategory\": \"Wooden\",\r\n  \"productPrice\": \"456\",\r\n  \"productImageUrl\": \"https://images.philips.com/is/image/PhilipsConsumer/58PUT6604_94-IMS-en_IN?$jpglarge$&wid=960\",\r\n  \"productDescription\": \"New\",\r\n  \"productID\": \"22841370\"\r\n},{\r\n      \"productName\": \"LED TV\",\r\n  \"productCategory\": \"Wooden\",\r\n  \"productPrice\": \"456\",\r\n  \"productImageUrl\": \"https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gh-best-tv-brands-1587581394.png?crop=0.853xw:0.657xh;0.0733xw,0.165xh&resize=1200:*\",\r\n  \"productDescription\": \"New\",\r\n  \"productID\": \"22841441\"\r\n}]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/users/permission",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"users",
+						"permission"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add_new_products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjI5OTE1MDMsInVzZXJJRCI6IjU2NzU4Nzc5NyIsImlhdCI6MTY2MjM4NjcwM30.qT7X2us3jx06MMVCHV4_ApCEL_hNPInE4v-Jt5c6bm8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productName\":\"Trimmer\",\r\n    \"productCategory\":\"Electronics\",\r\n    \"productPrice\":\"7654\",\r\n    \"productDescription\":\"Very Brand New\",\r\n    \"productImageUrl\":\"https://5.imimg.com/data5/II/DY/ZW/SELLER-88737005/htc-hair-and-beard-trimmer-at-209-500x500.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllProducts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjI5OTE1MDMsInVzZXJJRCI6IjU2NzU4Nzc5NyIsImlhdCI6MTY2MjM4NjcwM30.qT7X2us3jx06MMVCHV4_ApCEL_hNPInE4v-Jt5c6bm8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
